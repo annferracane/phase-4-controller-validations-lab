@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
     render json: post
   rescue ActiveRecord::RecordInvalid => invalid
-    render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+    render json: { errors: invalid.record.errors, status: }
   end
 
   private
