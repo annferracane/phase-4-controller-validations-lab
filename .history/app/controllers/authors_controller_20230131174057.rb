@@ -11,6 +11,8 @@ class AuthorsController < ApplicationController
     render json: author, status: :created
   rescue ActiveRecord::RecordInvalid => invalid
     render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+    render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+
   end
 
   private
